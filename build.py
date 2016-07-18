@@ -18,7 +18,7 @@ from subprocess import check_call, check_output
 # TODO: Add in some argv processing
 # TODO: Add some default args which cause us to build
 # llvm, clang ad lld by default
-# TODO: Add a docstring to provide help via the argv 
+# TODO: Add a docstring to provide help via the argv
 # processing thingy
 
 
@@ -56,6 +56,7 @@ def update_repos(repo_path, repo_url):
         shell_command = [
             'git',
             'clone',
+            '--depth 1',
             repo_url,
             repo_path
         ]
@@ -119,7 +120,7 @@ def ninja_build():
     ninja_command = ['ninja', 'install']
     print("---- Installing binaries ----")
     print(check_output(ninja_command))
-    
+
     return ninja_diff_time
 
 
