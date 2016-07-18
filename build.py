@@ -56,7 +56,8 @@ def update_repos(repo_path, repo_url):
         shell_command = [
             'git',
             'clone',
-            '--depth 1',
+            '--depth',
+            '1',
             repo_url,
             repo_path
         ]
